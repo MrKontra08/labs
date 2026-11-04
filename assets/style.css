@@ -1,0 +1,42 @@
+
+:root{--navy:#10233d;--blue:#2468be;--ink:#182940;--muted:#63748a;--paper:#f2f6fb;--line:#dfebf6;--soft:#ebf4ff;--white:#fff;--yellow:#ffcf6e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
+a{color:#1456a4;text-underline-offset:3px}
+a:hover{color:#0b3e83}a:focus-visible{outline:3px solid #e3aa32;outline-offset:3px;border-radius:3px}
+.site-header{background:linear-gradient(110deg,#132b4e,#204b76);color:#fff;padding:40px 24px 35px} .header-inner{max-width:1120px;margin:0 auto}
+.tagline{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#c5dcf7;margin:0 0 12px}
+.site-header h1{font-size:clamp(29px,4vw,46px);letter-spacing:-.035em;line-height:1.17;margin:0 0 14px}
+.site-header p{font-size:16px;max-width:760px;color:#dae8f7;margin:0}
+.navigation{background:#fff;border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(20,46,78,.04)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:15px 24px;display:flex;align-items:start;gap:40px}
+.navigation ul{list-style:none;padding:0;margin:0;display:flex;gap:32px;align-items:start;flex-wrap:wrap}
+.navigation ul>li{position:relative;font-weight:700}
+.navigation .nav-link{display:inline-block;padding:4px 0;color:var(--navy);text-decoration:none}
+.navigation ol{padding:5px 0 0 25px;margin:0;list-style-type:decimal;color:#6d829f;min-width:330px}
+.navigation ol li{font-weight:400;padding:1px 0}
+.navigation ol a{font-size:14px;color:#2e5b88;text-decoration:none}
+.navigation ol a:hover{text-decoration:underline}
+.navigation .muted-link{color:#637b96}
+.container{max-width:1120px;margin:0 auto;padding:38px 24px 60px}
+.layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(270px,1fr);gap:24px;align-items:start}
+.paper,.side{background:#fff;border:1px solid #e0eaf5;border-radius:17px;box-shadow:0 14px 35px rgba(19,49,83,.055)}
+.paper{padding:36px}.side{padding:30px}
+.overline{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--blue);margin:0 0 8px}
+h2{font-size:28px;line-height:1.3;letter-spacing:-.025em;margin:0 0 14px;color:var(--navy)}h3{font-size:18px;color:var(--navy);margin:25px 0 10px}
+p{margin:0 0 17px}.muted{color:var(--muted)}
+.lab-list{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:13px}
+.lab-card{border:1px solid var(--line);border-radius:12px;padding:17px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;text-decoration:none;color:var(--ink);transition:background .15s,border-color .15s}
+.lab-card:hover{background:#f5faff;border-color:#b9d7f4;color:var(--ink)}
+.lab-card strong{display:block;color:#153b68;font-size:16px}.lab-card small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.lab-index{min-width:42px;width:42px;height:42px;display:grid;place-items:center;border-radius:10px;background:var(--soft);font-weight:700;color:#245fa4}
+.lab-card .body{flex:1}
+.badge{font-size:11px;border-radius:30px;background:#e5f5eb;color:#1b774a;padding:5px 9px;font-weight:700;white-space:nowrap}
+.badge.waiting{background:#fff4df;color:#8b5712}
+.side ul{padding-left:19px;margin:12px 0 0}.side li{margin:10px 0}.side a{text-decoration:none}.side a:hover{text-decoration:underline}
+.practice{background:#eaf4ff;border:1px solid #d1e6ff;border-radius:14px;padding:22px;margin-top:22px}
+.practice h3{margin:0 0 8px}.practice a{font-weight:700}
+.breadcrumb{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:20px}.breadcrumb a{text-decoration:none}
+.site-footer{background:#12253e;color:#e4ebf7;padding:26px 24px;text-align:center;font-size:14px}.site-footer p{margin:0}
+@media(max-width:760px){.site-header{padding:28px 20px}.nav-inner{padding:12px 20px}.navigation ul{display:block}.navigation ul>li{margin:3px 0}.navigation ol{min-width:0;margin-bottom:6px}.container{padding:22px 15px 42px}.layout{grid-template-columns:1fr;gap:17px}.paper,.side{padding:23px 20px}.lab-card{flex-wrap:wrap;gap:10px}.badge{margin-left:52px}.practice{padding:16px}}
