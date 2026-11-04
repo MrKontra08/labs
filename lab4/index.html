@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анкета студента | ЛР №4 — МТ-42</title>
+  <style>
+    :root {color-scheme:light; font-family:Arial,Helvetica,sans-serif;color:#1c2940;background:#f3f6fb}
+    * {box-sizing:border-box}
+    body {margin:0;line-height:1.5}
+    header {background:#203c70;color:white;padding:25px 18px;text-align:center}
+    header h1 {margin:0 0 4px;font-size:28px}
+    header p {margin:0;opacity:.9}
+    main {max-width:860px;margin:28px auto;padding:0 16px}
+    form {background:white;border:1px solid #dce4ef;border-radius:12px;padding:26px;box-shadow:0 6px 24px #203c7010}
+    section {margin-bottom:23px}
+    fieldset {border:1px solid #cfdae9;border-radius:8px;padding:17px;min-width:0}
+    legend {font-weight:bold;color:#203c70;padding:0 8px}
+    .grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+    label:not(.option) {display:block;font-weight:600;margin:0 0 5px}
+    input:not([type=radio]):not([type=checkbox]):not([type=range]):not([type=color]), select, textarea {width:100%;padding:10px;border:1px solid #b7c5d8;border-radius:6px;background:#fff;font:inherit}
+    input[type=color] {width:75px;height:42px;cursor:pointer}
+    input[type=range] {width:100%;accent-color:#245cad}
+    textarea {min-height:105px;resize:vertical}
+    select[multiple] {height:130px}
+    .options {display:flex;gap:17px;flex-wrap:wrap;margin-top:7px}
+    .option {display:inline-flex;align-items:center;gap:6px}
+    small {display:block;color:#67788e;margin-top:5px}
+    button {border:0;border-radius:8px;background:#245cad;color:white;padding:12px 23px;font-weight:700;font-size:15px;cursor:pointer}
+    button:hover {background:#163e7a}
+    #message {margin:14px 0 0;color:#176b42;font-weight:600}
+    footer {text-align:center;color:#66768b;padding:14px 12px 30px}
+    @media(max-width:600px) {.grid{grid-template-columns:1fr}form{padding:15px}header h1{font-size:23px}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Анкета студента</h1>
+  <p>Лабораторна робота №4 · Борик Ярослав · МТ-42</p>
+</header>
+<main>
+  <form id="survey" action="#" method="post" enctype="multipart/form-data">
+    <section><fieldset><legend>Особисті дані</legend>
+      <div class="grid">
+        <div><label for="fullName">Full Name</label><input id="fullName" name="fullName" type="text" required minlength="3" placeholder="Прізвище та ім’я"></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="student@example.com"></div>
+        <div><label for="password">Password</label><input id="password" name="password" type="password" required minlength="8" placeholder="Мінімум 8 символів"></div>
+        <div><label for="age">Age</label><input id="age" name="age" type="number" min="14" max="100" required></div>
+        <div><label for="birthDate">Date of Birth</label><input id="birthDate" name="birthDate" type="date" required></div>
+        <div><label for="country">Country</label><select id="country" name="country" required><option value="">Оберіть країну</option><option>Ukraine</option><option>Poland</option><option>Germany</option><option>France</option><option>Other</option></select></div>
+      </div>
+      <p><strong>Gender</strong></p><div class="options">
+        <label class="option"><input name="gender" type="radio" value="male" required> Male</label>
+        <label class="option"><input name="gender" type="radio" value="female"> Female</label>
+        <label class="option"><input name="gender" type="radio" value="other"> Other</label>
+      </div>
+    </fieldset></section>
+    <section><fieldset><legend>Навчання та навички</legend>
+      <label>Languages Known</label><div class="options">
+        <label class="option"><input name="languages" type="checkbox" value="English"> English</label>
+        <label class="option"><input name="languages" type="checkbox" value="Spanish"> Spanish</label>
+        <label class="option"><input name="languages" type="checkbox" value="French"> French</label>
+      </div>
+      <p><label for="subjects">College Subjects</label><select id="subjects" name="subjects" multiple size="5"><option>Mathematics</option><option>Computer Science</option><option>Physics</option><option>Chemistry</option><option>English</option></select><small>Ctrl + клік — вибрати кілька предметів</small></p>
+      <p><label for="interest">Rate Interest in Computer Science: <output id="interestValue" for="interest">5</output>/10</label><input id="interest" name="interest" type="range" min="0" max="10" value="5" oninput="document.getElementById('interestValue').value=this.value"></p>
+      <label for="skills">Describe Skills</label><textarea id="skills" name="skills" placeholder="Коротко опишіть свої навички"></textarea>
+    </fieldset></section>
+    <section><fieldset><legend>Додатково</legend><div class="grid">
+      <div><label for="resume">Upload Resume</label><input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx"><small>PDF, DOC, DOCX</small></div>
+      <div><label for="color">Pick Favorite Color</label><input id="color" name="favoriteColor" type="color" value="#245cad"></div>
+      <div><label for="studyTime">Preferred Study Time</label><input id="studyTime" name="studyTime" type="time"></div>
+    </div></fieldset></section>
+    <button type="submit">Submit Survey</button>
+    <p id="message" role="status" aria-live="polite"></p>
+  </form>
+</main>
+<footer>© Copyright 2026 by Борик Ярослав. All rights reversed.</footer>
+<script>
+  // Навчальна демонстрація: без серверного обробника введені дані нікуди не передаються.
+  document.getElementById('survey').addEventListener('submit', function (event) {
+    event.preventDefault();
+    document.getElementById('message').textContent = 'Анкету перевірено! Це демонстраційна форма: дані на сервер не надсилаються.';
+  });
+</script>
+</body>
+</html>
