@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лабораторна №5 — logos_container | Борик Ярослав, МТ-42</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <p class="back"><a href="../">← До списку лабораторних</a></p>
+    <h1>Лабораторна робота №5</h1>
+    <p class="intro">Варіант №2. Відтворення елемента <code>header#logos_container</code> з головної сторінки <a href="https://lpnu.ua/">lpnu.ua</a>.</p>
+
+    <!-- Структура блоку взята з вихідного HTML університету, наданого студентом. -->
+    <header id="logos_container" role="region" aria-label="Featured University Units">
+      <div class="container">
+        <div class="region region-logos">
+          <section id="block-selectedunits" class="block block-block-content">
+            <div class="field field--name-body">
+              <div class="row">
+                <div class="col-xs-4">
+                  <a href="http://tsus.lpnu.ua/" target="_blank" rel="noopener noreferrer">
+                    <img class="img-responsive" src="https://lpnu.ua/themes/lpnu/images/LPNU_logo_tech-startup-school.png" alt="Логотип Tech Startup School">
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="https://techbs.lpnu.ua/" target="_blank" rel="noopener noreferrer">
+                    <img class="img-responsive" src="https://lpnu.ua/themes/lpnu/images/LPNU_logo_tech-business-school.png" alt="Логотип Tech Business School">
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="http://tsus.lpnu.ua/sid" target="_blank" rel="noopener noreferrer">
+                    <img class="img-responsive" src="https://lpnu.ua/themes/lpnu/images/LPNU_logo_SID-city-scientific-park.png" alt="Логотип наукового парку SID City">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </header>
+    <section class="explanation">
+      <h2>Аналіз блоку</h2>
+      <p>Три зображення-посилання на підрозділи та проєкти університету. Для компонування застосовано три рівні колонки, кожна займає одну третину контейнера. CSS демонструє властивості <code>width</code>, <code>padding</code>, <code>margin</code>, <code>border</code>, <code>font-family</code> та <code>color</code>.</p>
+      <p class="note">HTML-структура та адреси зображень узяті з наданого вихідного коду lpnu.ua. Значення CSS — навчальне наближення, оскільки оригінальні computed styles у DevTools не надано.</p>
+    </section>
+  </main>
+  <footer>© 2026 Борик Ярослав · МТ-42 · №2 у журналі</footer>
+</body>
+</html>

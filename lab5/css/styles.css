@@ -1,0 +1,21 @@
+/* Лабораторна №5, варіант №2 — header#logos_container */
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f6f8; color: #26354a; font-family: Roboto, Arial, sans-serif; line-height: 1.5; }
+main { max-width: 1200px; margin: 32px auto; padding: 0 22px; }
+h1 { margin: 0 0 6px; font-size: 29px; }
+.intro { margin: 0 0 25px; color: #596b81; }
+a { color: #194e8f; }
+.back a { text-decoration: none; font-weight: 600; }
+/* Блок із вихідного коду lpnu.ua: три колонки col-xs-4. */
+header#logos_container { margin: 28px 0; padding: 25px 0; background-color: #fff; border-top: 1px solid #e9edf2; border-bottom: 1px solid #e9edf2; }
+#logos_container .container { width: 100%; max-width: 1170px; margin: 0 auto; padding: 0 15px; }
+#logos_container .row { display: flex; flex-wrap: wrap; margin: 0 -15px; align-items: center; }
+#logos_container .col-xs-4 { width: 33.333333%; padding: 0 15px; text-align: center; }
+#logos_container .col-xs-4 a { display: block; padding: 10px; }
+#logos_container .img-responsive { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; }
+#logos_container .col-xs-4 a:hover { background: #f2f5fb; }
+.explanation { padding: 12px 0 24px; }
+.explanation h2 { font-size: 21px; }
+.note { border-left: 3px solid #728bba; padding-left: 14px; color: #617083; }
+footer { padding: 20px; text-align: center; color: #617083; font-size: 13px; }
+@media (max-width: 540px) { #logos_container .col-xs-4 { width: 100%; } #logos_container .col-xs-4 a { padding: 15px; } }
